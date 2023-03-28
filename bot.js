@@ -27,8 +27,6 @@ client.on("threadCreator", async function (message) {
             reason: `${message.content}`,
         });
 
-        const threadId = thread.id
-
         message.thread.join(threadId)
         message.thread.send({ content: `*Data de Abertura: ${new Date().toISOString().split('T')[0]}*\nOlá, ${message.author.username}! \nRecebemos a sua reclamação e estamos com um time para analisá-la.\n:thumbsup_tone1: :thumbsup_tone1: :thumbsup_tone1: :thumbsup_tone1:\n\nMotivo do contato: ${message.content}`, allowedMentions: { repliedUser: true } })
         console.log(`Created thread: ${thread.name} | ${thread.id}`);
